@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ fullname }}</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: {{ colour }};
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    footer {
+      background-color: {{ colour }};
+      color: black;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{ fullname }}</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>{{ aboutme }}</p>
+    </section>
+
+    <section id="recent-project">
+      <h2>Most Recent Project</h2>
+      <div class="portfolio-item">
+        <h3>{{ recentprojectname }}</h3>
+        <p>{{ recentprojectdescription }}</p>
+        <a href="{{ recentprojectlink }}" target="_blank">View Project</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:{{ emailaddress }}">{{ emailaddress }}</a></p>
+      <p>LinkedIn: <a href="{{ linkedinurl }}" target="_blank">{{ linkedinurl }}</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 {{ fullname }}</p>
+  </footer>
+</body>
+</html>
